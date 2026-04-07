@@ -28,7 +28,7 @@ const FavoriteStack = () => {
       }
     >
       <div
-        className="grid 2xl:grid-cols-6 lg:grid-cols-4 sm:grid-cols-4 grid-cols-2 gap-8 mt-2"
+        className="grid 2xl:grid-cols-6 lg:grid-cols-4 sm:grid-cols-4 grid-cols-4 gap-8 mt-2"
         ref={containerRef}
       >
         {tool_images.map((img, i) => (
