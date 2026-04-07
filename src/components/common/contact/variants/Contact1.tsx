@@ -58,11 +58,11 @@ const Contact1 = () => {
           <span>?</span>
         </div>
 
-        <div className="flex gap-8 flex-wrap justify-center">
+        {/* <div className="flex gap-8 flex-wrap justify-center">
           {contact_info.map((item, i) => (
             <ContactInfo key={i} {...item} />
           ))}
-        </div>
+        </div> */}
       </MaxWidthWrapper>
 
       <Form {...form}>

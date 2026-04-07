@@ -11,7 +11,11 @@ type LanguageContextType = {
   lang: Language;
   setLang: (lang: Language) => void;
   toggleLang: () => void;
-  t: <T extends Translatable>(value: TranslationValue<T> | T) => T;
+  t: {
+    (value: string): string;
+    (value: readonly string[]): readonly string[];
+    <T extends Translatable>(value: TranslationValue<T>): T;
+  };
 };
 
 const LanguageContext = createContext<LanguageContextType | null>(null);
@@ -38,10 +42,17 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     setLang((prev) => (prev === "en" ? "ru" : "en"));
   };
 
-  const t = <T extends Translatable>(value: TranslationValue<T> | T): T => {
-    if (typeof value === "string" || Array.isArray(value)) return value;
-    return value[lang] ?? value.en;
-  };
+  function t(value: string): string;
+  function t(value: readonly string[]): readonly string[];
+  function t<T extends Translatable>(value: TranslationValue<T>): T;
+  function t<T extends Translatable>(value: TranslationValue<T> | T): T {
+    if (typeof value === "string" || Array.isArray(value)) {
+      return value as T;
+    }
+
+    const translation = value as TranslationValue<T>;
+    return translation[lang] ?? translation.en;
+  }
 
   const contextValue = useMemo(
     () => ({

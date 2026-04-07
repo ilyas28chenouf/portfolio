@@ -52,7 +52,7 @@ const Footer2 = () => {
         />
         <MaxWidthWrapper className="relative text-center flex flex-col items-center gap-8 py-32">
           <p className="text-(--color-primary-fixed)! text-2xl">
-            © 2025{" "}
+            © 2026{" "}
             <span
               className=" cursor-pointer uppercase hover:underline"
               onClick={() =>
