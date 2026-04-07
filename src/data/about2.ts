@@ -101,7 +101,7 @@ export const tool_images = [
   "/images/tools/AWS.svg",
   "/images/tools/Vercel.svg",
   // 15  
-  "/images/tools/github.svg",
+  "/images/tools/GitHub.svg",
   // 16
   "/images/tools/Jira.svg",
 

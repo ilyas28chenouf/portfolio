@@ -103,7 +103,7 @@ const Nav = () => {
           </div>
         ))}
         <div className="ml-6">
-          <LanguageSwitcher />
+          <LanguageSwitcher variant="light" />
         </div>
       </nav>
 
