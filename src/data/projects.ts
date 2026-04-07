@@ -16,6 +16,7 @@ export const projects = [
     tags: ["Team Leader", "front-end", "back-end", "Designer", "eCommerce"],
     tools: ["nestjs", "flutter", "postgressql" ,"Android", "Apple", "Firebase", "AWS", "Figma", "Stripe"],
     link: "https://client.qiwash.com/",
+    figmaLink:"https://www.figma.com/design/mJcLdPDALeAEn2j0HJnBVt/My-Portfolio?node-id=170-5740&p=f&t=LXrCeZ9P0QAW6B4q-0",
     cols: 2,
   },
   // 2
@@ -51,6 +52,7 @@ export const projects = [
     tags: ["Mobile developper", "Full stack", "Android"],
     tools: ["Expo", "NestJS", "nextjs", "postgressql", "TypeScript", "TailwindCSS",  "Figma"],
     link: "https://beautysafe.online/",
+    figmaLink: "https://www.figma.com/design/mJcLdPDALeAEn2j0HJnBVt/My-Portfolio?node-id=137-820&p=f&t=LXrCeZ9P0QAW6B4q-0",
     cols: 1,
   },
   // 4
@@ -106,6 +108,7 @@ export const projects = [
     tags: ["Team Leader", "Designer"],
     tools: ["Flutter", "Supabase", "Figma"],
     link: "https://lightness.world/",
+    figmaLink: "https://www.figma.com/design/mJcLdPDALeAEn2j0HJnBVt/My-Portfolio?node-id=170-1083&p=f&t=EwFj4bDDozqm6Ff0-0",
     cols: 2,
   },
   // 7
@@ -159,7 +162,8 @@ export const projects = [
     image: "/images/projects/sababp.png",
     tags: ["Designer"],
     tools: ["Figma"],
-    link: "https://www.figma.com/design/5TtXxk1uWckQoVQ4JL5TX5/Sabebp?node-id=18-78&p=f&t=mTD7d6ezbP2i8eRb-0",
+    link: "https://www.figma.com/design/mJcLdPDALeAEn2j0HJnBVt/Safe-Beauty?node-id=305-11282&t=EwFj4bDDozqm6Ff0-0",
+    figmaLink: "https://www.figma.com/design/mJcLdPDALeAEn2j0HJnBVt/My-Portfolio?node-id=170-11411&p=f&t=LXrCeZ9P0QAW6B4q-0",
     cols: 1,
   },
 ];

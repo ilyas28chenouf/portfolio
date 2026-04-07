@@ -31,7 +31,7 @@ const ProjectLightboxContent = ({
 
 const ProjectLightbox = () => {
   const { projectIdx } = useProjectContext();
-  const { title, description, image, link, tools, whatIDid } =
+  const { title, description, image, link, tools, whatIDid, figmaLink } =
     projects[projectIdx];
   const { t } = useLanguage();
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -157,8 +157,16 @@ const ProjectLightbox = () => {
               ) : null}
             </AnimatePresence>
           </div>
+          {figmaLink && (
+            <div className="w-full aspect-[16/10] overflow-hidden rad border border-(--border) p-4 mt-16">
+              <iframe
+                className="w-full h-full"
+                src={`https://www.figma.com/embed?embed_host=share&url=${figmaLink}`}
+                allowFullScreen
+              />
+            </div>
+          )}
         </MaxWidthWrapper>
-
       </div>
     </>
   );
