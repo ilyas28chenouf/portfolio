@@ -24,7 +24,7 @@ export const custom_cursor = true;
 //
 //
 // -------[ theme ]------- //
-export const dark_theme = true;
+export const dark_theme = false;
 //
 //
 //
@@ -63,7 +63,7 @@ export const client_option: ClientOption = "slider";
 6 - list
 7 - cinematic
 */
-export const projects_option: ProjectOption = "cinematic";
+export const projects_option: ProjectOption = "stacked-sticky-cards";
 //
 //
 //
@@ -73,7 +73,7 @@ export const projects_option: ProjectOption = "cinematic";
 2 - list
 3 - slider
 */
-export const services_option: ServiceOption = "slider";
+export const services_option: ServiceOption = "cards";
 //
 //
 //
@@ -82,7 +82,7 @@ export const services_option: ServiceOption = "slider";
 1 - contact-1
 2 - contact-2
 */
-export const contact_option: ContactOption = "contact-1";
+export const contact_option: ContactOption = "contact-2";
 //
 //
 //

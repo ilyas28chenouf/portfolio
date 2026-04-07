@@ -9,7 +9,7 @@ import HorizontalTicker, {
 const Contact = () => {
   return (
     <Section id="contact" className="pb-16!">
-      <div className="mb-16 font-black whitespace-nowrap">
+      {/* <div className="mb-16 font-black whitespace-nowrap">
         <HorizontalTicker animationDuration={40} duplicate className="py-16">
           <HorizontalTickerItem gap={64}>
             <h1 className="text-[clamp(100px,13vw,13vw)] leading-[clamp(100px,13vw,13vw)] scale-y-200 overflow-hidden ">
@@ -35,7 +35,7 @@ const Contact = () => {
             </h1>
           </HorizontalTickerItem>
         </HorizontalTicker>
-      </div>
+      </div> */}
       {contact_option === "contact-1" ? <Contact1 /> : <Contact2 />}
     </Section>
   );

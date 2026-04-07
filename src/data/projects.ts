@@ -1,111 +1,200 @@
 // ==================[ Projects ]================== //
 // note cols works in cards variant only
-
 export const projects = [
   // 1
   {
-    title: "Portfolio 1",
-    description:
-      "A modern personal portfolio that effectively showcases a developer's experience, services, background, and projects, designed to increase opportunities for finding freelance or remote work",
-    image: "/images/projects/portfolio-1.jpg",
-    tags: ["portfolio", "front-end", "animation", "professional", "modern"],
-    tools: ["nextjs", "ts", "gsap", "tailwind"],
-    link: "https://example.com/1",
+    title: "Qiwash",
+    description: {
+      en: "A web and mobile application that connects users with cleaning service providers. It enables booking, service tracking, secure payments, and real-time communication, simplifying the process of finding and managing cleaning services.",
+      ru: "Веб и Мобильное приложение для поиска и бронирования услуг уборки. Позволяет пользователям находить исполнителей, отслеживать заказы, оплачивать услуги и взаимодействовать с сервисом в режиме реального времени.",
+    },
+    whatIDid: {
+      en: "Led the project team, designed the product interface in Figma, developed backend services with NestJS, and coordinated the mobile development process for Flutter applications.",
+      ru: "Руководил командой проекта, разрабатывал дизайн продукта в Figma, создавал backend-сервисы на NestJS и координировал процесс мобильной разработки Flutter-приложений.",
+    },
+    image: "/images/projects/qiwash-mobile.png",
+    tags: ["Team Leader", "front-end", "back-end", "Designer", "eCommerce"],
+    tools: ["nestjs", "flutter", "Android", "Apple", "Firebase", "AWS", "Figma", "Stripe"],
+    link: "https://client.qiwash.com/",
     cols: 2,
   },
-
   // 2
   {
-    title: "Grocery Ecommerce",
-    description:
-      "Ymmy is a front-end grocery market web application designed to serve the local community by showcasing fresh food offerings, especially fruits and vegetables, with a focus on fast, local delivery. This project uses mock data to simulate real-world content and interactions, aiming to demonstrate my front-end development capabilities in building clean, responsive, and user-friendly interfaces.",
-    image: "/images/projects/grocery-ecommerce.jpg",
+    title: "МЕГАПРОКАТ",
+    description: {
+      en: "An equipment rental platform with a large catalog of tools and machinery. The system allows users to browse, select, and request rental services, with additional features such as delivery options and customer interaction channels.",
+      ru: "Платформа аренды инструментов и оборудования с большим каталогом. Пользователи могут просматривать, выбирать и оформлять аренду, а также пользоваться дополнительными функциями, такими как доставка и связь с менеджерами.",
+    },
+    whatIDid: {
+      en: "Worked on both frontend and backend development, implemented platform functionality with WordPress and PHP, and supported business workflow integration.",
+      ru: "Работал над frontend и backend частью проекта, реализовал функциональность платформы на WordPress и PHP, а также поддержал интеграцию бизнес-процессов.",
+    },
+    image: "/images/projects/megaprocat.png",
     tags: ["eCommerce", "front-end", "back-end"],
-    tools: ["nextjs", "ts", "js", "tailwind"],
-    link: "https://example.com/2",
+    tools: ["wordpress", "php", "bitrix24"],
+    link: "https://mega-prokat.com/",
     cols: 1,
   },
 
   // 3
   {
-    title: "Admin Dashboard",
-    description:
-      "A clean and efficient dashboard for managing products, orders, categories, and viewing insights through sales, order, and profit analysis, note: This project uses mock data to simulate real-world content and interactions, aiming to demonstrate my front-end development capabilities in building clean, responsive, and user-friendly interfaces.",
-    image: "/images/projects/admin-dashboard.jpg",
-    tags: ["eCommerce", "front-end", "back-end", "analysis"],
-    tools: ["nextjs", "ts", "js", "tailwind"],
-    link: "https://example.com/3",
+    title: "Beaty Safe",
+    description: {
+      en: "A mobile application that analyzes cosmetic products and provides users with safety insights based on ingredient data. It helps users make informed decisions about product usage.",
+      ru: "Мобильное приложение для анализа косметических продуктов. Предоставляет информацию о безопасности ингредиентов и помогает пользователям принимать обоснованные решения.",
+    },
+    whatIDid: {
+      en: "Designed the product interface in Figma and developed the application across mobile, web, and backend layers using React Native, Next.js, and NestJS.",
+      ru: "Разработал дизайн продукта в Figma и реализовал приложение на мобильном, веб- и backend-уровнях с использованием React Native, Next.js и NestJS.",
+    },
+    image: "/images/projects/beautysafe.png",
+    tags: ["Mobile developper", "Full stack", "Android"],
+    tools: ["Expo", "nestjs", "nextjs", "TypeScript", "TailwindCSS",  "Figma"],
+    link: "https://beautysafe.online/",
     cols: 1,
   },
-
   // 4
+
   {
-    title: "Grocery App",
-    description:
-      "Ymmy is a front-end grocery market web application designed to serve the local community by showcasing fresh food offerings, especially fruits and vegetables, with a focus on fast, local delivery. This project uses mock data to simulate real-world content and interactions, aiming to demonstrate my front-end development capabilities in building clean, responsive, and user-friendly interfaces.",
-    image: "/images/projects/grocery-app.jpg",
-    tags: ["eCommerce", "front-end", "back-end"],
-    tools: ["reactjs", "ts", "tailwind"],
-    link: "https://example.com/4",
+    title: "пансионате «Высокая горка»",
+    description: {
+      en: "A corporate website for a senior care residence focused on presenting services, facilities, and living conditions. The platform highlights key information such as care services, accommodation, and daily activities, with an emphasis on clarity and accessibility for users.",
+      ru: "Корпоративный сайт пансионата для пожилых людей, направленный на презентацию услуг, условий проживания и инфраструктуры. Платформа предоставляет ключевую информацию об уходе, размещении и повседневной жизни в удобном и понятном формате.",
+    },
+    whatIDid: {
+      en: "Developed and customized the website backend using WordPress and PHP, and contributed to structuring the platform content and functionality.",
+      ru: "Разработал и настроил backend сайта на WordPress и PHP, а также участвовал в построении структуры контента и функциональности платформы.",
+    },
+    image: "/images/projects/pansionatgorka.png",
+    tags: ["Back-end", "e-commerce", "professional", "modern"],
+    tools: ["wordpress", "php"],
+    link: "https://pansionatgorka.ru/",
     cols: 2,
   },
 
   // 5
   {
-    title: "Portfolio 2",
-    description:
-      "A personal portfolio displaying skills, projects, and testimonials, with an option for hiring or collaboration.",
-    image: "/images/projects/portfolio-2.jpg",
-    tags: ["portfolio", "front-end"],
-    tools: ["nextjs", "tailwind", "ts"],
-    link: "https://example.com/5",
+    title: "Пансионаты и сиделки",
+    description: {
+      en: "An informational platform designed to help users find and compare senior care facilities. It provides structured guidance, listings, and criteria-based selection tools to support decision-making.",
+      ru: "Информационная платформа для поиска и сравнения пансионатов для пожилых людей. Предоставляет структурированную информацию, списки и критерии выбора для принятия решений.",
+    },
+    whatIDid: {
+      en: "Worked on both frontend and backend implementation of the platform, developing the website structure and core functionality with WordPress and PHP.",
+      ru: "Работал над frontend и backend реализацией платформы, разрабатывая структуру сайта и основную функциональность на WordPress и PHP.",
+    },
+    image: "/images/projects/pansiondelki.png",
+    tags: ["Backend", "front-end"],
+    tools: ["wordpress", "php"],
+    link: "https://pansionisidelki.ru/",
     cols: 1,
   },
 
   // 6
-  {
-    title: "Fashion Ecommerce",
-    description:
-      "Furnisty is a front-end Fashion market web application designed to serve the local community by showcasing modern Fashion and Apparel offerings, with a focus on fast, local delivery. This project uses mock data to simulate real-world content and interactions, aiming to demonstrate my front-end development capabilities in building clean, responsive, and user-friendly interfaces",
-    image: "/images/projects/fashion-ecommerce.jpg",
-    tags: ["eCommerce", "front-end", "back-end"],
-    tools: ["nextjs", "ts", "tailwind"],
-    link: "https://example.com/6",
-    cols: 1,
-  },
 
+  {
+    title: "LightNess",
+    description: {
+      en: "LightNess is a conceptual digital product designed to combine spirituality and technology into a unified user experience. The application focuses on personal growth, offering tools for daily guidance, reflection, and life planning. It emphasizes mindful living, continuous support, and helping users stay present while maintaining control over important life decisions.",
+      ru: "LightNess — это концептуальный цифровой продукт, объединяющий духовность и технологии в едином пользовательском опыте. Приложение направлено на личностное развитие, предлагая инструменты для ежедневной поддержки, саморефлексии и планирования жизненных этапов. Основной акцент сделан на осознанности, поддержке пользователя и контроле над важными решениями в жизни.",
+    },
+    whatIDid: {
+      en: "Led the product direction, designed the user experience in Figma, and coordinated the mobile development process for the Flutter application.",
+      ru: "Определял направление продукта, разрабатывал пользовательский опыт в Figma и координировал процесс мобильной разработки Flutter-приложения.",
+    },
+    image: "/images/projects/lightness.png",
+    tags: ["Team Leader", "Designer"],
+    tools: ["Flutter", "Supabase", "Figma"],
+    link: "https://lightness.world/",
+    cols: 2,
+  },
   // 7
   {
-    title: "landing 1",
-    description: "A minimal landing page",
-    image: "/images/projects/landing-1.jpg",
-    tags: ["logo", "design"],
-    tools: ["Figma"],
-    link: "https://example.com/7",
+    title: "МЭК",
+    description: {
+      en: "A corporate website for a company operating in the nuclear energy sector. The platform presents services such as technical auditing, safety compliance, and project support.",
+      ru: "Корпоративный сайт компании, работающей в сфере атомной энергетики. Представляет услуги технического аудита, промышленной безопасности и сопровождения проектов.",
+    },
+    whatIDid: {
+      en: "Developed the website using Next.js, TypeScript, and Tailwind CSS, implementing the frontend structure and delivering a modern corporate presentation.",
+      ru: "Разработал сайт с использованием Next.js, TypeScript и Tailwind CSS, реализовав frontend-структуру и современную корпоративную подачу.",
+    },
+    image: "/images/projects/mek.png",
+    tags: ["Professional", "front-end", "back-end"],
+    tools: ["nextjs", "TypeScript", "TailwindCSS"],
+    link: "https://mekexpert.ru/",
     cols: 1,
   },
 
   // 8
 
   {
-    title: "App 1",
-    description: "Mockup app 1",
-    image: "/images/projects/app-1.jpg",
-    tags: ["portfolio", "front-end"],
-    tools: ["nextjs", "ts", "gsap", "tailwind"],
-    link: "https://example.com/8",
+    title: "OneNetwork",
+    description: {
+      en: "A service focused on language learning and communication support. It provides personalized solutions to help users improve their language skills and achieve communication goals in professional and personal contexts.",
+      ru: "Oриентированная на изучение языков и развитие коммуникации. Предоставляет персонализированные решения для улучшения языковых навыков в профессиональной и личной сфере.",
+    },
+    whatIDid: {
+      en: "Handled frontend and backend development of the website, including content presentation, functionality implementation, and interface enhancement.",
+      ru: "Занимался frontend и backend разработкой сайта, включая подачу контента, реализацию функциональности и улучшение пользовательского интерфейса.",
+    },
+    image: "/images/projects/onetwork.png",
+    tags: ["Learning", "front-end", "back-end", "animation"],
+    tools: ["wordpress", "php"],
+    link: "https://onetworkinc.com/",
     cols: 1,
   },
 
   // 9
   {
-    title: "landing 2",
-    description: "A minimal landing page 2",
-    image: "/images/projects/landing-2.jpg",
-    tags: ["logo", "design"],
+    title: "Sababp",
+    description: {
+      en: "A design concept for a donation platform that connects users with charitable organizations. The system emphasizes transparency, allowing users to track how their contributions are used.",
+      ru: "Концепт дизайна платформы для пожертвований, соединяющей пользователей с благотворительными организациями. Основной акцент сделан на прозрачности использования средств.",
+    },
+    whatIDid: {
+      en: "Designed the product concept and user interface in Figma, focusing on a clear donation flow and transparent user experience.",
+      ru: "Разработал концепцию продукта и пользовательский интерфейс в Figma, сделав акцент на понятном процессе пожертвования и прозрачном пользовательском опыте.",
+    },
+    image: "/images/projects/sababp.png",
+    tags: ["Designer"],
     tools: ["Figma"],
-    link: "https://example.com/9",
-    cols: 2,
+    link: "https://www.figma.com/design/5TtXxk1uWckQoVQ4JL5TX5/Sabebp?node-id=18-78&p=f&t=mTD7d6ezbP2i8eRb-0",
+    cols: 1,
   },
 ];
 //
+export const titles = {
+  fearured: {
+    en: "featured",
+    ru: "избранная"
+  },
+  work: {
+    en: "work",
+    ru: "работа"
+  },
+  let_work: {
+    en: "Let's work",
+    ru: "Давайте работать"
+  },
+  project_tags:{
+    en: "project tags",
+    ru: "теги проекта",
+  },
+  about_work:{
+    en: "About work",
+    ru: "О работе",
+  },
+  tools:{
+    en: "tools",
+    ru: "Стеки"
+  },
+  what_i_did:{
+    en:"What I did",
+    ru:"Что я сделал"
+  },
+  view:{
+    en: "View",
+    ru: "Посмотреть"
+  }
+}

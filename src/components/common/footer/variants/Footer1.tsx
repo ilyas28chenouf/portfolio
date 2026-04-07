@@ -27,7 +27,7 @@ const Footer1 = () => {
             end: "bottom 25%",
             scrub: true,
           },
-        }
+        },
       );
 
       gsap.fromTo(
@@ -42,7 +42,7 @@ const Footer1 = () => {
             end: "top 25%",
             scrub: true,
           },
-        }
+        },
       );
     });
     return () => ctx.revert();
@@ -50,9 +50,9 @@ const Footer1 = () => {
 
   return (
     <>
-      <div className="relative h-screen" ref={div1Ref}></div>
+      <div className="relative 3xl:h-[19vh] h-[25vh]" ref={div1Ref}></div>
 
-      <div
+      {/* <div
         className="fixed z-1 left-0 bottom-0 h-screen w-screen overflow-hidden md:bg-contain bg-cover max-md:bg-no-repeat"
         ref={imageRef}
         style={{
@@ -69,14 +69,16 @@ const Footer1 = () => {
         />
       </div>
 
-      <div className="relative h-[75vh]" ref={div2Ref}></div>
+      <div className="relative h-[75vh]" ref={div2Ref}></div> */}
 
       <footer
-        className="fixed z-0 left-0 bottom-0 h-[75vh] w-screen overflow-hidden bg-black"
+        className="fixed z-0 left-0 bottom-0  w-screen overflow-hidden bg-black"
         ref={footerRef}
       >
         <div className="py-16 lg:space-y-16 space-y-8">
           <MaxWidthWrapper className="relative text-center flex flex-col items-center gap-8">
+            <SocialLinks />
+
             <p className="text-(--color-primary-fixed)! text-2xl">
               © 2025{" "}
               <span
@@ -89,11 +91,9 @@ const Footer1 = () => {
               </span>{" "}
               All Rights Reserved.
             </p>
-
-            <SocialLinks />
           </MaxWidthWrapper>
 
-          <HeroName className="text-(--color-primary-fixed)!" />
+          {/* <HeroName className="text-(--color-primary-fixed)!" /> */}
         </div>
       </footer>
     </>

@@ -2,6 +2,8 @@
 import { ReactNode, createContext, useContext, useEffect, useRef } from "react";
 import { motion, useMotionValue, useSpring } from "motion/react";
 import { custom_cursor } from "@/data/config";
+import { useLanguage } from "@/context/LanguageContext";
+import { titles } from "@/data/projects";
 
 export const CursorContext = createContext({});
 
@@ -98,6 +100,7 @@ export const CursorContextProvider = ({
       });
     };
   }, []);
+const { t } = useLanguage();
 
   return (
     <CursorContext.Provider value={{}}>
@@ -116,7 +119,7 @@ export const CursorContextProvider = ({
             className="-rotate-12 text-black! text-3xl font-semibold duration opacity-0"
             ref={viewRef}
           >
-            VIEW
+            {t(titles.view)}
           </h1>
         </motion.div>
       ) : null}

@@ -6,18 +6,20 @@ import HowDoIWork from "../common/about/HowDoIWork";
 import MaxWidthWrapper from "../common/global/MaxWidthWrapper";
 import { personal_data } from "@/data/home";
 import Image from "next/image";
-import { about_image } from "@/data/about";
+import { about_image, titles } from "@/data/about2";
 import Skills from "../common/about/Skills";
 import FavoriteStack from "../common/about/FavoriteStack";
+import { useLanguage } from "@/context/LanguageContext";
 
 const About = () => {
+  const { t } = useLanguage();
   return (
     <>
       <Section id="about" separator={false} className="space-y-48 pt-0!">
-        <MaxWidthWrapper>
+        {/* <MaxWidthWrapper>
           <div className="grid lg:grid-cols-2 grid-cols-1 lg:gap-32 gap-16">
             <SectionTitle section="about" margin={false}>
-              about <br /> me
+              {t(titles.about)} <br /> {t(titles.me)}
             </SectionTitle>
             <div className="relative aspect-16/11 overflow-hidden">
               <Image
@@ -28,7 +30,7 @@ const About = () => {
               />
             </div>
           </div>
-        </MaxWidthWrapper>
+        </MaxWidthWrapper> */}
 
         <div className="space-y-48">
           <MaxWidthWrapper className="space-y-48">
@@ -37,7 +39,7 @@ const About = () => {
             <FavoriteStack />
             <Experience />
           </MaxWidthWrapper>
-          <Clients />
+          {/* <Clients /> */}
         </div>
       </Section>
     </>

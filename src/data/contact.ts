@@ -1,21 +1,32 @@
+import { ru } from "zod/locales";
+
 // ==================[ Contact Info ]================== //
 export const contact_info = [
   // 1
   {
-    title: "Phone",
-    info: "+1234 4567 8926",
+    title: {
+      en: "Phone",
+      ru: "Телефон",
+    },
+    info: "+7 (931) 214-19-08",
   },
 
   // 2
   {
-    title: "Email",
-    info: "example@gmail.com",
+    title: {
+      en: "Email",
+      ru: "Электронная почта",
+    },
+    info: "ilyaschenouf@yandex.ru",
   },
 
   // 3
   {
-    title: "Location",
-    info: "New york, 1322",
+    title: {
+      en: "Location",
+      ru: "Местоположение",
+    },
+    info: "Saint Petersburg, Russia",
   },
 ] as const;
 //
@@ -25,19 +36,8 @@ export const social_links = [
   // 1
   {
     name: "github",
-    link: "https://github.com",
+    link: "https://github.com/ilyas28chenouf",
   },
 
-  // 2
-  {
-    name: "dribbble",
-    link: "https://dribble.com",
-  },
-
-  // 3
-  {
-    name: "linkedin",
-    link: "https://linkedin.com",
-  },
 ] as const;
 //

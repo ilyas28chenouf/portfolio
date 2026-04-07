@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from "react";
 import { projects } from "@/data/projects";
 import CountTitle from "../../global/CountTitle";
 import { ArrowTopRightSVG } from "@/components/arrows/Arrows";
+import { useLanguage } from "@/context/LanguageContext";
 
 const ProjectList = () => {
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -35,6 +36,7 @@ const ProjectList = () => {
   }, []);
 
   const { openProjectDialog } = useProjectDialog();
+  const { lang, t } = useLanguage();
 
   return (
     <div ref={containerRef} className="relative">
@@ -108,7 +110,7 @@ const ProjectList = () => {
               </div>
             </div>
             <p className="md:text-2xl text-lg font-light lg:basis-3/5 md:basis-1/2 md:text-start text-center text-(--color-primary-fixed)!  mix-blend-difference max-md:hidden line-clamp-4 h-fit">
-              {el.description}
+              {t(el.description)}
             </p>
           </div>
         </div>

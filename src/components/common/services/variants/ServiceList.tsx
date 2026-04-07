@@ -7,6 +7,7 @@ import { useEffect, useRef, useState } from "react";
 import { services } from "@/data/services";
 import GetServiceButton from "../GetServiceButton";
 import MaxWidthWrapper from "../../global/MaxWidthWrapper";
+import { useLanguage } from "@/context/LanguageContext";
 
 export type ServiceProps = {
   title: string;
@@ -34,6 +35,7 @@ const ServiceListItem = ({
       setHeight(isOpen ? contentRef.current.scrollHeight : 0);
     }
   }, [isOpen]);
+  const { lang, t } = useLanguage();
 
   return (
     <div
@@ -48,12 +50,12 @@ const ServiceListItem = ({
             className="font-normal text-3xl"
             active={isOpen}
           />
-          <h1>{title}</h1>
+          <h1>{t(title)}</h1>
         </div>
 
         <Image
           src={image}
-          alt={title}
+          alt={t(title)}
           width={100}
           height={100}
           className={cn(
@@ -86,7 +88,7 @@ const ServiceListItem = ({
             isOpen ? "opacity-100" : "opacity-0"
           )}
         >
-          <p className="text-xl font-light">{description}</p>
+          <p className="text-xl font-light">{t(description)}</p>
 
           <GetServiceButton idx={idx} />
         </div>
@@ -104,7 +106,7 @@ const ServiceList = () => {
 
   return (
     <MaxWidthWrapper>
-      {services.map((s, i) => (
+      {/* {services.map((s, i) => (
         <ServiceListItem
           key={i}
           {...s}
@@ -112,7 +114,8 @@ const ServiceList = () => {
           isOpen={activeServiceIdx === i}
           onOpenChange={onOpenChange}
         />
-      ))}
+      ))} */}
+      <div>Hello World</div>
     </MaxWidthWrapper>
   );
 };

@@ -4,13 +4,14 @@ import { createContext, useContext, useEffect, useMemo, useState } from "react";
 
 type Language = "en" | "ru";
 
-type TranslationValue = Record<Language, string>;
+type TranslationValue<T> = Record<Language, T>;
+type Translatable = string | readonly string[];
 
 type LanguageContextType = {
   lang: Language;
   setLang: (lang: Language) => void;
   toggleLang: () => void;
-  t: (value: TranslationValue | string) => string;
+  t: <T extends Translatable>(value: TranslationValue<T> | T) => T;
 };
 
 const LanguageContext = createContext<LanguageContextType | null>(null);
@@ -37,9 +38,9 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     setLang((prev) => (prev === "en" ? "ru" : "en"));
   };
 
-  const t = (value: TranslationValue | string) => {
-    if (typeof value === "string") return value;
-    return value[lang] ?? value.en ?? "";
+  const t = <T extends Translatable>(value: TranslationValue<T> | T): T => {
+    if (typeof value === "string" || Array.isArray(value)) return value;
+    return value[lang] ?? value.en;
   };
 
   const contextValue = useMemo(

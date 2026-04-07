@@ -1,10 +1,12 @@
 "use client";
-import { tool_images } from "@/data/about";
+import { titles, tool_images } from "@/data/about2";
 import AboutContent from "./AboutContent";
 import Image from "next/image";
 import useScrollStaggerAnimation from "@/hooks/useScrollStaggerAnimation";
+import { useLanguage } from "@/context/LanguageContext";
 
 const FavoriteStack = () => {
+  const {  t } = useLanguage();
   const containerRef = useScrollStaggerAnimation<HTMLDivElement>({
     selector: ".tool",
     fromVars: { opacity: 0, y: 100 },
@@ -21,25 +23,26 @@ const FavoriteStack = () => {
     <AboutContent
       titleChild={
         <>
-          My <br /> Tech Stack
-        </>
+          {t(titles.my2)} <br /> {t(titles.tech_stack)}
+          </>
       }
     >
       <div
-        className="grid 2xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-4 grid-cols-2 gap-8 mt-2"
+        className="grid 2xl:grid-cols-6 lg:grid-cols-4 sm:grid-cols-4 grid-cols-2 gap-8 mt-2"
         ref={containerRef}
       >
         {tool_images.map((img, i) => (
           <div
             key={i}
             className="relative aspect-square flex-center group tool rounded-full border border-primary"
+          
           >
             <Image
               src={img}
               alt="tool"
               width={48}
               height={48}
-              className="grayscale-100 group-hover:grayscale-0 duration"
+              className="duration"
             />
           </div>
         ))}

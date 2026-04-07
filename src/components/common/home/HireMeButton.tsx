@@ -1,9 +1,10 @@
 "use client";
 import { Magnetic } from "@/components/motion-primitives/magnetic";
-import { spinning_text_words } from "@/data/home";
+import { home_data  } from "@/data/home2";
 import { useScrollToSection } from "@/hooks/useScrollToSection";
 import { cn } from "@/lib/utils";
 import { ArrowDown } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 const HireMeButton = ({
   className,
@@ -13,6 +14,7 @@ const HireMeButton = ({
   theme?: boolean;
 }) => {
   const scrollTo = useScrollToSection();
+const { t } = useLanguage();
 
   return (
     <Magnetic className={className}>
@@ -58,7 +60,7 @@ const HireMeButton = ({
               <text
                 textLength="940"
                 className={cn(
-                  "text-5xl uppercase",
+                  "text-5xl",
                   theme
                     ? "fill-(--text-primary)"
                     : "fill-(--color-primary-fixed)"
@@ -69,7 +71,7 @@ const HireMeButton = ({
                   aria-label="contact me"
                   textLength="940"
                 >
-                  {spinning_text_words}
+                  {t(home_data.spinning_text_words)}
                 </textPath>
               </text>
             </g>

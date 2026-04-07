@@ -19,6 +19,7 @@ import MaxWidthWrapper from "../../global/MaxWidthWrapper";
 import { cn } from "@/lib/utils";
 import ButtonArrowUpRight from "../../global/ButtonArrowUpRight";
 import ClickableText from "../../global/ClickableText";
+import { useLanguage } from "@/context/LanguageContext";
 
 const FormInputWrapper = ({
   children,
@@ -44,7 +45,7 @@ const FormInputWrapper = ({
 
 const Contact2 = () => {
   const { form, submitHandler, isPending, formResponse } = useContactForm();
-
+  const { lang, t } = useLanguage();
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
   const handleInput = () => {
@@ -60,13 +61,17 @@ const Contact2 = () => {
       <div className="flex lg:flex-row flex-col gap-8 justify-between">
         <div className="flex gap-8 flex-wrap justify-query">
           {contact_info.map((item, i) => (
-            <ContactInfo key={i} {...item} />
+            <ContactInfo
+            key={item.info}
+            title={t(item.title)}
+            info={item.info}
+          />
           ))}
         </div>
 
-        <h1 className="text-5xl text-query">
+        {/* <h1 className="text-5xl text-query">
           ✺ Interested in <br /> working with me ?
-        </h1>
+        </h1> */}
       </div>
 
       <div id="contact-form">
@@ -168,8 +173,11 @@ const Contact2 = () => {
             </div>
           </form>
         </Form>
+
       </div>
+      
     </MaxWidthWrapper>
+    
   );
 };
 

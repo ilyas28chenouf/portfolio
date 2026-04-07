@@ -1,25 +1,30 @@
 "use client";
-import { how_do_i_work } from "@/data/about";
+import { how_do_i_work, titles } from "@/data/about2";
 import AboutContent from "./AboutContent";
 import FillText from "../global/FillText";
 import { cn } from "@/lib/utils";
+import { useLanguage } from "@/context/LanguageContext";
 
 const HowDoIWork = () => {
+  const { lang, t } = useLanguage();
   const text_class = "lg:text-[2.3rem] sm:text-3xl text-2xl text-query";
+
+  const workItems = how_do_i_work[lang as keyof typeof how_do_i_work];
+
   return (
     <AboutContent
       titleChild={
         <>
-          How <br /> Do I Work
+          {t(titles.how)} <br /> {t(titles.do_i_work)}
         </>
       }
       sticky
     >
       <div className="space-y-8">
-        {how_do_i_work.map((txt, i) => (
+        {workItems.map((txt, i) => (
           <div key={i} className="space-y-2">
             <FillText className={cn(text_class, "text-start!")}>
-              ✺ {i < 9 ? 0 : null}
+              ✺ {i < 9 ? "0" : null}
               {i + 1}
             </FillText>
 

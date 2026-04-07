@@ -11,6 +11,7 @@ import { cn } from "@/lib/utils";
 import { GlobalGsapProvider } from "@/context/GlobalGsapProvider";
 import ProjectLightbox from "@/components/common/projects/ProjectLightbox";
 import { Analytics } from "@vercel/analytics/next";
+import { LanguageProvider } from "@/context/LanguageContext";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -36,6 +37,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={dark_theme ? "dark" : ""}>
       <body className={cn(poppins.variable, Saira.variable)}>
+      <LanguageProvider>
         <CursorContextProvider>
           <ProjectContextProvider>
             <ServiceContextProvider>
@@ -49,8 +51,9 @@ export default function RootLayout({
             </ServiceContextProvider>
           </ProjectContextProvider>
         </CursorContextProvider>
-
+        </LanguageProvider>
         <Analytics />
+        
       </body>
     </html>
   );

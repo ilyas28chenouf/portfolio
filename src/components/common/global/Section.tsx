@@ -29,9 +29,9 @@ export const SectionTitle = ({
 
       <FillText
         className={cn(
-          "text-[clamp(90px,12vw,12vw)] leading-[clamp(80px,9vw,9vw)] font-semibold tracking-tight",
+          "flex flex-col gap-18 text-[clamp(24px,4vw,4vw)] leading-[clamp(40px,5vw,5vw)]  font-semibold tracking-tight",
           center ? "text-center" : "text-query"
-        )}
+        )} 
       >
         {children}
       </FillText>

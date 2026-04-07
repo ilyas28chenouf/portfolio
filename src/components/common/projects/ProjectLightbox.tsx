@@ -1,5 +1,5 @@
 "use client";
-import { projects } from "@/data/projects";
+import { projects, titles } from "@/data/projects";
 import { cn } from "@/lib/utils";
 import { useProjectContext } from "@/context/ProjectContext";
 import { AnimatePresence, motion } from "motion/react";
@@ -9,9 +9,10 @@ import Button from "@/components/ui/Button";
 import { X } from "lucide-react";
 import ProjectTags from "./ProjectTags";
 import MaxWidthWrapper from "../global/MaxWidthWrapper";
-import { ReactNode } from "react";
+import { ReactNode, useEffect, useRef } from "react";
 import ButtonArrowUpRight from "../global/ButtonArrowUpRight";
 import ClickableText from "../global/ClickableText";
+import { useLanguage } from "@/context/LanguageContext";
 
 const ProjectLightboxContent = ({
   title,
@@ -30,10 +31,18 @@ const ProjectLightboxContent = ({
 
 const ProjectLightbox = () => {
   const { projectIdx } = useProjectContext();
-  const { title, description, image, link, tools } = projects[projectIdx];
-
+  const { title, description, image, link, tools, whatIDid } = projects[projectIdx];
+  const { t } = useLanguage();
+  const scrollRef = useRef<HTMLDivElement>(null);
   const { setIsOpenProject, isOpenProject } = useProjectContext();
-
+  useEffect(() => {
+    if (isOpenProject && scrollRef.current) {
+      scrollRef.current.scrollTo({
+        top: 0,
+        behavior: "auto",
+      });
+    }
+  }, [isOpenProject, projectIdx]);
   return (
     <>
       <div
@@ -66,6 +75,7 @@ const ProjectLightbox = () => {
       </div>
 
       <div
+      ref={scrollRef}
         className={cn(
           "fixed z-[41] bg-(--bg-secondary) left-0 bottom-0 overflow-y-auto overflow-x-hidden size-full overscroll-contain",
           isOpenProject ? "translate-y-0" : "translate-y-full"
@@ -75,69 +85,79 @@ const ProjectLightbox = () => {
         }}
         data-lenis-prevent
       >
-        <MaxWidthWrapper className="space-y-16 py-16">
-          <AnimatePresence>
-            {isOpenProject ? (
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 1.5 }}
-              >
-                <div className="relative aspect-[16/12] size-full">
-                  <Image
-                    src={image}
-                    alt={title}
-                    fill
-                    sizes="(max-width: 768px) 75vw, 50vw"
-                    className="object-cover pointer-events-auto duration-1000 ease-in-out"
-                  />
-                </div>
-              </motion.div>
-            ) : null}
-          </AnimatePresence>
+<MaxWidthWrapper className="py-16">
+  <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
 
-          <div className="flex max-sm:flex-col justify-between gap-4 sm:items-center">
-            <h1 className="lg:text-7xl text-4xl">{title}</h1>
 
-            {link ? (
-              <Link href={link} target="_blank" className="group">
-                <Button
-                  variant="outline"
-                  className="px-8 h-20 text-2xl rounded-full"
-                >
-                  <ClickableText text="Visit Site" /> <ButtonArrowUpRight />
-                </Button>
-              </Link>
-            ) : null}
-          </div>
+    <div className="space-y-10">
+      <div className="flex max-sm:flex-col justify-between gap-4 sm:items-center">
+        <h1 className="lg:text-7xl text-4xl">{title}</h1>
 
-          <ProjectLightboxContent title="project tags">
-            <ProjectTags idx={projectIdx} />
-          </ProjectLightboxContent>
+        {link ? (
+          <Link href={link} target="_blank" className="group">
+            <Button
+              variant="outline"
+              className="px-8 h-20 text-2xl rounded-full"
+            >
+              <ClickableText text="Visit Site" /> <ButtonArrowUpRight />
+            </Button>
+          </Link>
+        ) : null}
+      </div>
 
-          <ProjectLightboxContent title="about work">
-            <p className="text-xl">{description}</p>
-          </ProjectLightboxContent>
+      <ProjectLightboxContent title={t(titles.project_tags)}>
+        <ProjectTags idx={projectIdx} />
+      </ProjectLightboxContent>
 
-          <ProjectLightboxContent title="tools">
-            <div className="flex items-center flex-wrap gap-4">
-              {tools.map((tool, i) => (
-                <div
-                  key={i}
-                  className="rad border border-(--border) text-sm p-3"
-                >
-                  <Image
-                    src={`/images/tools/${tool.toLowerCase()}.svg`}
-                    alt={tool}
-                    width={36}
-                    height={36}
-                  />
-                </div>
-              ))}
+      <ProjectLightboxContent title={t(titles.about_work)}>
+        <p className="text-xl">{t(description)}</p>
+      </ProjectLightboxContent>
+
+      <ProjectLightboxContent title={t(titles.what_i_did)}>
+        <p className="text-xl">{t(whatIDid)}</p>
+      </ProjectLightboxContent>
+
+      <ProjectLightboxContent title={t(titles.tools)}>
+        <div className="flex items-center flex-wrap gap-4">
+          {tools.map((tool, i) => (
+            <div
+              key={i}
+              className="rad border border-(--border) text-sm p-3"
+            >
+              <Image
+                src={`/images/tools/${tool.toLowerCase()}.svg`}
+                alt={tool}
+                width={36}
+                height={36}
+              />
             </div>
-          </ProjectLightboxContent>
-        </MaxWidthWrapper>
+          ))}
+        </div>
+      </ProjectLightboxContent>
+    </div>
+        <AnimatePresence>
+      {isOpenProject ? (
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -30 }}
+          transition={{ duration: 0.8 }}
+          className="lg:sticky lg:top-10"
+        >
+          <div className="relative aspect-[16/12] w-full max-w-3xl">
+            <Image
+              src={image}
+              alt={title}
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-cover pointer-events-auto duration-1000 ease-in-out rounded-xl"
+            />
+          </div>
+        </motion.div>
+      ) : null}
+    </AnimatePresence>
+  </div>
+</MaxWidthWrapper>
       </div>
     </>
   );
