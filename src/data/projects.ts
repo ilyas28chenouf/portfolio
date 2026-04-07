@@ -49,7 +49,7 @@ export const projects = [
     },
     image: "/images/projects/beautysafe.png",
     tags: ["Mobile developper", "Full stack", "Android"],
-    tools: ["Expo", "nestjs", "nextjs", "TypeScript", "TailwindCSS",  "Figma"],
+    tools: ["Expo", "NestJS", "nextjs", "TypeScript", "TailwindCSS",  "Figma"],
     link: "https://beautysafe.online/",
     cols: 1,
   },
@@ -196,5 +196,9 @@ export const titles = {
   view:{
     en: "View",
     ru: "Посмотреть"
+  },
+  visit_site: {
+    en: "Check project",
+    ru: "Проверьте проект"
   }
 }

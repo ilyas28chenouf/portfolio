@@ -82,7 +82,7 @@ const Contact2 = () => {
             onSubmit={form.handleSubmit(submitHandler)}
           >
             <div className="grid lg:grid-cols-2 grid-cols-1 gap-8">
-              <FormInputWrapper label="Your Name">
+              <FormInputWrapper label={t({en: "Your Name",ru: "ваше имя",})}>
                 <FormField
                   control={form.control}
                   name="name"
@@ -91,7 +91,7 @@ const Contact2 = () => {
                       <FormControl>
                         <Input
                           {...field}
-                          placeholder="John Alex"
+                          placeholder={t({ en: "John Alex", ru: "Иван Иванов" })}
                           type="text"
                           disabled={isPending}
                           autoComplete="on"
@@ -103,7 +103,7 @@ const Contact2 = () => {
                 />
               </FormInputWrapper>
 
-              <FormInputWrapper label="Your Email">
+              <FormInputWrapper label={t({en: "Your Email",ru: "ваша электронная почта",})}>
                 <FormField
                   control={form.control}
                   name="email"
@@ -112,7 +112,7 @@ const Contact2 = () => {
                       <FormControl>
                         <Input
                           {...field}
-                          placeholder="john.example@gmail.com"
+                          placeholder={t({ en: "john.example@gmail.com", ru: "ivan.ivanov@yandex.ru" })}
                           type="text"
                           disabled={isPending}
                           autoComplete="on"
@@ -124,7 +124,7 @@ const Contact2 = () => {
                 />
               </FormInputWrapper>
 
-              <FormInputWrapper label="Your Message" className="lg:col-span-2">
+              <FormInputWrapper label={t({en: "Your Message",ru: "ваше сообщение",})} className="lg:col-span-2">
                 <FormField
                   control={form.control}
                   name="message"
@@ -136,7 +136,10 @@ const Contact2 = () => {
                           ref={textareaRef}
                           rows={1}
                           onInput={handleInput}
-                          placeholder="Hi, I'm Looking for..."
+                          placeholder={t({
+                            en: "Hi, I'm looking for...",
+                            ru: "Здравствуйте, я ищу...",
+                          })}
                           autoComplete="on"
                         />
                       </FormControl>

@@ -69,8 +69,8 @@ const ProjectLightbox = () => {
         )}
         onClick={() => setIsOpenProject(false)}
       >
-        <Button className="size-24 border" variant="primary">
-          <X size={48} className="group-hover:rotate-90 duration-300" />
+        <Button className="size-12 border" variant="primary">
+          <X size={24} className="group-hover:rotate-90 duration-300" />
         </Button>
       </div>
 
@@ -99,7 +99,7 @@ const ProjectLightbox = () => {
               variant="outline"
               className="px-8 h-20 text-2xl rounded-full"
             >
-              <ClickableText text="Visit Site" /> <ButtonArrowUpRight />
+              <ClickableText text={t(titles.visit_site)} /> <ButtonArrowUpRight />
             </Button>
           </Link>
         ) : null}
