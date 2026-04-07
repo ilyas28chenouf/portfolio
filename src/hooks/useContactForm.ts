@@ -1,4 +1,3 @@
-import { sendEmail } from "@/_actions";
 import { useServiceContext } from "@/context/ServiceContext";
 import { personal_data } from "@/data/home";
 import { services } from "@/data/services";
@@ -55,11 +54,11 @@ const useContactForm = () => {
     startTransition(() => {
       const { name, email, message } = values;
 
-      sendEmail(name, email, message)
-        .then((res) => {
-          setFormResponse(res);
-        })
-        .catch((message) => setFormResponse({ error: true, message: message }));
+      // sendEmail(name, email, message)
+      //   .then((res) => {
+      //     setFormResponse(res);
+      //   })
+      //   .catch((message) => setFormResponse({ error: true, message: message }));
     });
   };
 
