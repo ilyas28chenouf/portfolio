@@ -125,7 +125,7 @@ const ProjectLightbox = () => {
               className="rad border border-(--border) text-sm p-3"
             >
               <Image
-                src={`/images/tools/${tool.toLowerCase()}.svg`}
+                src={`/images/icons/${tool.toLowerCase()}.svg`}
                 alt={tool}
                 width={36}
                 height={36}

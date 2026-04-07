@@ -157,7 +157,7 @@ const Contact2 = () => {
 
             <div className="lg:w-70 w-full mx-auto">
               <Button
-                className="flex-center lg:w-60 w-full bg-(--bg-primary-inverse) text-(--text-primary-inverse) py-10 group"
+                className="flex-center lg:w-80 w-full bg-(--bg-primary-inverse) text-(--text-primary-inverse) py-10 group"
                 type="submit"
                 variant="default"
                 disabled={
@@ -168,8 +168,8 @@ const Contact2 = () => {
                 {isPending ? (
                   <span className="spinner" />
                 ) : (
-                  <div className="flex-center font-medium text-2xl">
-                    <ClickableText text="Send Message" /> <ButtonArrowUpRight />
+                  <div className="flex-center font-medium text-2xl gap-2">
+                    <ClickableText text={t({en:"Send Message", ru:"Отправить Сообщение"})} /> <ButtonArrowUpRight />
                   </div>
                 )}
               </Button>
