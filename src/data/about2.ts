@@ -68,42 +68,42 @@ export const titles = {
 // ==================[ Stack ]================== //
 export const tool_images = [
   // 1
-  "/images/icons/TypeScript.svg",
+  "/images/icons/typescript.svg",
   // 2
-  "/images/icons/React.svg",
+  "/images/icons/react.svg",
   // 3
-  "/images/icons/NextJS.svg",
+  "/images/icons/nextjs.svg",
   // 4
-  "/images/icons/NodeJS.svg",
+  "/images/icons/nodejs.svg",
   // 5
-  "/images/icons/NestJS.svg",
-  "/images/icons/Expo.svg",
+  "/images/icons/nestjs.svg",
+  "/images/icons/expo.svg",
 
   // 6
-  "/images/icons/TailwindCSS.svg",
+  "/images/icons/tailwindcss.svg",
   // 7
-  "/images/icons/PostgresSQL.svg",
+  "/images/icons/postgressql.svg",
   // 8
-  "/images/icons/MySQL.svg",
+  "/images/icons/mysql.svg",
   // 9
 
-  // 12
-  "/images/icons/PHP.svg",
-  // 13
-  "/images/icons/Laravel.svg",
-  // 14
-  "/images/icons/wordpress2.svg",
-  "/images/icons/Swagger.svg",
   // 10
-  "/images/icons/Firebase.svg",
+  "/images/icons/php.svg",
+  // 11
+  "/images/icons/laravel.svg",
+  // 12
+  "/images/icons/wordpress2.svg",
+  "/images/icons/swagger.svg",
+  // 10
+  "/images/icons/firebase.svg",
 
   // 11
-  "/images/icons/AWS.svg",
-  "/images/icons/Vercel.svg",
+  "/images/icons/aws.svg",
+  "/images/icons/vercel.svg",
   // 15  
-  "/images/icons/GitHub.svg",
+  "/images/icons/github.svg",
   // 16
-  "/images/icons/Jira.svg",
+  "/images/icons/jira.svg",
 
 ] as const;
 //

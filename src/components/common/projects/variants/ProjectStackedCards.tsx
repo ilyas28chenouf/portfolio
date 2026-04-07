@@ -13,11 +13,13 @@ const ProjectStackedCard = ({
   image,
   title,
   sticky,
+  tools,
 }: {
   idx: number;
   image: string;
   title: string;
   sticky: boolean;
+  tools: string[];
 }) => {
   const { openProjectDialog } = useProjectDialog();
 
@@ -25,7 +27,7 @@ const ProjectStackedCard = ({
     <div
       className={cn(
         sticky ? "sticky top-16" : "relative",
-        "stacked-card aspect-[16/10] z-30 overflow-hidden block group rad lightbox-trigger"
+        "stacked-card aspect-[16/10] z-30 overflow-hidden block group rad lightbox-trigger",
       )}
       onClick={() => openProjectDialog(idx)}
     >
@@ -38,20 +40,34 @@ const ProjectStackedCard = ({
       />
 
       <div className="absolute left-0 bottom-0 size-full bg-gradient-to-b from-black/45 to-black/0 rad opacity-0 group-hover:opacity-100 duration" />
+      <div className="absolute inset-0 px-8 py-8 sm:flex hidden flex-col justify-between rad group-hover:translate-y-0 translate-y-full duration">
+        <div className="flex flex-row items-start justify-between">
+          <div className="text-4xl flex gap-4 ">
+            <CountTitle idx={idx} className="text-white!" active />
+            <h1 className="mix-blend-difference line-clamp-1 flex-1 text-white!">
+              {title}
+            </h1>
+          </div>
 
-      <div className="absolute left-8 top-0 w-[calc(100%-64px)] sm:flex hidden items-start justify-between gap-4 rad group-hover:translate-y-full -translate-y-full duration">
-        <div className="text-4xl flex gap-4">
-          <CountTitle idx={idx} className="text-white!" active />
-          <h1 className="mix-blend-difference line-clamp-1 flex-1 text-white!">
-            {title}
-          </h1>
+          <ProjectTags
+            idx={idx}
+            limit={5}
+            className="bg-white/15 text-white border-none mt-4"
+          />
         </div>
 
-        <ProjectTags
-          idx={idx}
-          limit={3}
-          className="bg-white/15 text-white border-none"
-        />
+        <div className="flex items-center flex-wrap gap-4">
+          {tools.map((tool, i) => (
+            <div key={i} className="rad border border-(--border) text-sm p-3">
+              <Image
+                src={`/images/icons/${tool.toLowerCase()}.svg`}
+                alt={tool}
+                width={36}
+                height={36}
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
