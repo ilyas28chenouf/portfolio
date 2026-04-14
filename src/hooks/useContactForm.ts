@@ -1,35 +1,29 @@
-import { useServiceContext } from "@/context/ServiceContext";
-import { personal_data } from "@/data/home";
-import { services } from "@/data/services";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useEffect, useState, useTransition } from "react";
+"use client";
+
+import { useState } from "react";
 import { useForm } from "react-hook-form";
-import z from "zod";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
 
-const useContactForm = () => {
-  const { serviceToggle, serviceIdx } = useServiceContext();
+const contactSchema = z.object({
+  name: z.string().min(2, "Please enter your name."),
+  email: z.string().email("Please enter a valid email."),
+  message: z.string().min(5, "Please enter your message."),
+});
 
-  const sendEmailSchema = z.object({
-    name: z.string().min(3, {
-      message: "Name is required",
-    }),
-    email: z.email({
-      message: "This email is invalid",
-    }),
-    message: z.string().min(12, {
-      message: `Message at least has 12 characters`,
-    }),
-  });
+type ContactFormValues = z.infer<typeof contactSchema>;
 
-  const [formResponse, setFormResponse] = useState<{
-    error: boolean;
-    message: string;
-  } | null>(null);
+type FormResponse = {
+  error: boolean;
+  message: string;
+} | null;
 
-  const [isPending, startTransition] = useTransition();
+export default function useContactForm() {
+  const [isPending, setIsPending] = useState(false);
+  const [formResponse, setFormResponse] = useState<FormResponse>(null);
 
-  const form = useForm<z.infer<typeof sendEmailSchema>>({
-    resolver: zodResolver(sendEmailSchema),
+  const form = useForm<ContactFormValues>({
+    resolver: zodResolver(contactSchema),
     defaultValues: {
       name: "",
       email: "",
@@ -37,29 +31,43 @@ const useContactForm = () => {
     },
   });
 
-  const { setValue } = form;
-
-  useEffect(() => {
-    if (serviceIdx != null) {
-      setValue(
-        "message",
-        `Hi ${personal_data.name}, I'm Looking for ( ${services[serviceIdx].title} ) service`,
-        { shouldValidate: true }
-      );
-    }
-  }, [setValue, serviceToggle]);
-
-  const submitHandler = (values: z.infer<typeof sendEmailSchema>) => {
+  const submitHandler = async (values: ContactFormValues) => {
+    setIsPending(true);
     setFormResponse(null);
-    startTransition(() => {
-      const { name, email, message } = values;
 
-      // sendEmail(name, email, message)
-      //   .then((res) => {
-      //     setFormResponse(res);
-      //   })
-      //   .catch((message) => setFormResponse({ error: true, message: message }));
-    });
+    try {
+      const res = await fetch('https://emailportfolio.vercel.app/api/contact', {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok || !data.success) {
+        setFormResponse({
+          error: true,
+          message: data.message || "Something went wrong.",
+        });
+        return;
+      }
+
+      setFormResponse({
+        error: false,
+        message: data.message || "Message sent successfully.",
+      });
+
+      form.reset();
+    } catch (error) {
+      setFormResponse({
+        error: true,
+        message: "Network error. Please try again.",
+      });
+    } finally {
+      setIsPending(false);
+    }
   };
 
   return {
@@ -68,6 +76,4 @@ const useContactForm = () => {
     isPending,
     formResponse,
   };
-};
-
-export default useContactForm;
+}

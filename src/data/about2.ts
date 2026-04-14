@@ -107,7 +107,167 @@ export const tool_images = [
 
 ] as const;
 //
+export const tech_stack = [
+  {
+    title: {
+      en: "Core Stack",
+      ru: "Основной стек",
+    },
+    items: [
+      {
+        name: "TypeScript",
+        image: "/images/icons/typescript.svg",
+        url: "https://www.typescriptlang.org/",
+      },
+      {
+        name: "React",
+        image: "/images/icons/react.svg",
+        url: "https://react.dev/",
+      },
+      {
+        name: "Next.js",
+        image: "/images/icons/nextjs.svg",
+        url: "https://nextjs.org/",
+      },
 
+      {
+        name: "NestJS",
+        image: "/images/icons/nestjs.svg",
+        url: "https://nestjs.com/",
+      },
+      {
+        name: "Expo",
+        image: "/images/icons/expo.svg",
+        url: "https://expo.dev/",
+      },
+            {
+        name: "Node.js",
+        image: "/images/icons/nodejs.svg",
+        url: "https://nodejs.org/en",
+      },
+    ],
+  },
+  {
+    title: {
+      en: "Side Project Stack",
+      ru: "Стек побочных проектов",
+    },
+    items: [
+      {
+        name: "PHP",
+        image: "/images/icons/php.svg",
+        url: "https://www.php.net/",
+      },
+      {
+        name: "Laravel",
+        image: "/images/icons/laravel.svg",
+        url: "https://laravel.com/",
+      },
+      {
+        name: "WordPress",
+        image: "/images/icons/wordpress2.svg",
+        url: "https://wordpress.org/",
+      },
+    ],
+  },
+    {
+    title: {
+      en: "Data Bases",
+      ru: "Базы данных",
+    },
+    items: [
+      {
+        name: "PostgreSQL",
+        image: "/images/icons/postgressql.svg",
+        url: "https://www.postgresql.org/",
+      },
+      {
+        name: "MySQL",
+        image: "/images/icons/mysql.svg",
+        url: "https://www.mysql.com/",
+      },
+
+    ],
+  },
+  {
+    title: {
+      en: "Cloud & Deployment",
+      ru: "Облако и деплой",
+    },
+    items: [
+
+      {
+        name: "AWS",
+        image: "/images/icons/aws.svg",
+        url: "https://aws.amazon.com/",
+      },
+      {
+        name: "Vercel",
+        image: "/images/icons/vercel.svg",
+        url: "https://vercel.com/",
+      },
+
+            {
+        name: "Firebase",
+        image: "/images/icons/firebase.svg",
+        url: "https://firebase.google.com/",
+      },
+                  {
+        name: "Render",
+        image: "/images/icons/render.svg",
+        url: "http://render.com/",
+      },
+            {
+        name: "Supabase",
+        image: "/images/icons/supabase.svg",
+        url: "https://supabase.com/",
+      },
+    ],
+  },
+    {
+    title: {
+      en: "Tools / Workflow",
+      ru: "Инструменты и процессы",
+    },
+    items: [
+      {
+        name: "GitHub",
+        image: "/images/icons/github.svg",
+        url: "https://github.com/",
+      },
+      {
+        name: "Jira",
+        image: "/images/icons/jira.svg",
+        url: "https://www.atlassian.com/software/jira",
+      },
+      {
+        name: "Tailwind CSS",
+        image: "/images/icons/tailwindcss.svg",
+        url: "https://tailwindcss.com/",
+      },
+      {
+        name: "Postman",
+        image: "/images/icons/postman.svg",
+        url: "https://www.postman.com/",
+      },
+            {
+        name: "Swagger",
+        image: "/images/icons/swagger.svg",
+        url: "https://swagger.io/",
+      },
+      {
+        name: "Algolia",
+        image: "/images/icons/algolia.svg",
+        url: "https://www.algolia.com/",
+      },
+            {
+        name: "Figma",
+        image: "/images/icons/figma.svg",
+        url: "https://www.figma.com/",
+      },
+    ],
+  },
+] as const;
 // ==================[ Skills ]================== //
 export const skills = [
   {
